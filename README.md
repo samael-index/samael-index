@@ -31,6 +31,7 @@
 
 <p align="center">
   <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,tailwind,nodejs,prisma,postgres,vercel,git,github,vscode&theme=dark" alt="stack" />
+  <img src="assets/n8n.svg" height="48" alt="n8n" title="n8n" />
 </p>
 
 <p align="center"><sub>También: Zod · Framer Motion · Vitest · Playwright · Claude / IA</sub></p>
@@ -42,7 +43,7 @@
 | Proyecto | Qué es | Stack |
 |---|---|---|
 | **Velas Luze** | E-commerce de velas artesanales con panel de administración, auth propia, catálogo y carga de imágenes. | Next.js · React · TypeScript · Prisma · PostgreSQL · Tailwind |
-| **Automatizaciones con IA** | Flujos que conectan herramientas y modelos de IA para ahorrar trabajo repetitivo en marketing y ventas. | IA · APIs · Node.js |
+| **Automatizaciones con IA** | Flujos que conectan herramientas y modelos de IA para ahorrar trabajo repetitivo en marketing y ventas. | n8n · IA · APIs · Node.js |
 
 ---
 
