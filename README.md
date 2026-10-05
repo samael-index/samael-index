@@ -1,6 +1,6 @@
 <!-- Banner -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,60:0d1117,100:002a1f&height=220&section=header&text=samael-index&fontSize=56&fontColor=00ff9c&fontAlignY=38&desc=Developer%20Junior%20%C2%B7%20Marketing%20%C2%B7%20IA%20%C2%B7%20Automatizaciones&descSize=18&descAlignY=60&descColor=8b949e" alt="banner" />
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,60:0d1117,100:002a1f&height=200&section=header&text=samael-index&fontSize=56&fontColor=00ff9c&fontAlignY=42&desc=Developer%20Junior%20%C2%B7%20Marketing%20%C2%B7%20IA%20%C2%B7%20Automatizaciones&descSize=18&descAlignY=68&descColor=8b949e" alt="banner" />
 </p>
 
 <p align="center">
@@ -55,5 +55,5 @@
 
 <!-- Footer -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:002a1f,40:0d1117,100:000000&height=120&section=footer" alt="footer" />
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:002a1f,40:0d1117,100:000000&height=40&section=footer" alt="footer" />
 </p>
