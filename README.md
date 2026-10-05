@@ -1,44 +1,67 @@
-<!-- Banner -->
+<!-- Los SVG de assets/ se generan con: python scripts/build.py -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:000000,60:0d1117,100:002a1f&height=200&section=header&text=samael-index&fontSize=56&fontColor=00ff9c&fontAlignY=42&desc=Developer%20Junior%20%C2%B7%20Marketing%20%C2%B7%20IA%20%C2%B7%20Automatizaciones&descSize=18&descAlignY=68&descColor=8b949e" alt="banner" />
+  <img src="assets/header.svg" width="100%" alt="vim ~/profile.yml" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=00FF9C&center=true&vCenter=true&width=600&lines=Construyo+tiendas+online+con+Next.js;Automatizo+procesos+con+IA;Arquitectura+de+software+%2B+Marketing+digital" alt="typing" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=00FF9C&center=true&vCenter=true&width=600&lines=Construyo+tiendas+online+con+Next.js;Automatizo+procesos+con+n8n+%2B+IA;Arquitectura+de+software+%2B+Marketing+digital" alt="typing" />
 </p>
 
 <p align="center">
-  <b>Developer Junior · Colombia 🇨🇴</b><br/>
-  Uno código, marketing e inteligencia artificial para construir productos que venden.
-</p>
-
-<p align="center">
-  <a href="https://github.com/samael-index"><img src="https://img.shields.io/github/followers/samael-index?label=Follow&style=social" alt="followers" /></a>
+  <img src="https://komarev.com/ghpvc/?username=samael-index&color=00c46a&style=flat-square&label=profile+views" alt="profile views" />
 </p>
 
 ---
 
-### 👋 Sobre mí
-
-- 💻 Developer junior enfocado en **frontend y full-stack con Next.js**
-- 🤖 Me apasionan la **IA**, la **arquitectura de software** y las **automatizaciones**
-- 📈 Experiencia en **marketing digital**: SEO, contenido y embudos de venta
-- 🌱 Aprendiendo a diario y construyendo proyectos reales
-
----
-
-### 🛠️ Stack
+### `$ whoami`
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,tailwind,nodejs,prisma,postgres,vercel,git,github,vscode&theme=dark" alt="stack" />
-  <img src="assets/n8n.svg" height="48" alt="n8n" title="n8n" />
+  <img src="assets/whoami.svg" width="100%" alt="whoami" />
 </p>
-
-<p align="center"><sub>También: Zod · Framer Motion · Vitest · Playwright · Claude / IA</sub></p>
 
 ---
 
-### 🚀 Proyectos
+<h3 align="center"><code>$ cat tech-stack.yaml</code></h3>
+
+<div align="center">
+<table>
+  <tr>
+    <td colspan="2"><code>samael@index:~$ cat tech-stack.yaml</code></td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <code>├─ ◆ frontend:</code><br/><br/>
+      <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,tailwind&theme=dark" height="40" alt="frontend" /><br/>
+      <sub>TypeScript · JavaScript · React · Next.js · Tailwind</sub>
+    </td>
+    <td width="50%">
+      <code>├─ ◇ backend_data:</code><br/><br/>
+      <img src="https://skillicons.dev/icons?i=nodejs,prisma,postgres&theme=dark" height="40" alt="backend" /><br/>
+      <sub>Node.js · Prisma · PostgreSQL</sub>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>├─ ⚡ automation_ai:</code><br/><br/>
+      <img src="assets/n8n.svg" height="40" alt="n8n" title="n8n" />
+      <img src="assets/claude.svg" height="40" alt="Claude" title="Claude" /><br/>
+      <sub>n8n · Claude / IA · APIs</sub>
+    </td>
+    <td>
+      <code>└─ ▲ deploy_tools:</code><br/><br/>
+      <img src="https://skillicons.dev/icons?i=vercel,git,github,vscode&theme=dark" height="40" alt="tools" /><br/>
+      <sub>Vercel · Git · GitHub · VS Code</sub>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><code>status: ready</code> · <code>environment: production</code></td>
+  </tr>
+</table>
+</div>
+
+---
+
+### `$ ls ~/projects`
 
 | Proyecto | Qué es | Stack |
 |---|---|---|
@@ -47,14 +70,27 @@
 
 ---
 
-### 📊 GitHub Stats
+### `$ samael --signals --all`
+
+<p align="center">
+  <img src="assets/radar.svg" width="100%" alt="skill radar" />
+</p>
+
+---
+
+### `$ git log --stats`
 
 <p align="center">
   <img height="170" src="https://github-readme-stats.vercel.app/api?username=samael-index&show_icons=true&theme=github_dark&bg_color=0d1117&title_color=00ff9c&icon_color=00ff9c&hide_border=true&count_private=true&include_all_commits=true" alt="stats" />
   <img height="170" src="https://streak-stats.demolab.com?user=samael-index&theme=github-dark-blue&background=0d1117&ring=00ff9c&fire=00ff9c&currStreakLabel=00ff9c&hide_border=true" alt="streak" />
 </p>
 
-<!-- Footer -->
+---
+
+### `$ connect --socials`
+
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:002a1f,40:0d1117,100:000000&height=40&section=footer" alt="footer" />
+  <a href="https://github.com/samael-index"><img src="https://img.shields.io/badge/GITHUB-0d1117?style=for-the-badge&logo=github&logoColor=00ff9c" alt="GitHub" /></a>
 </p>
+
+<p align="center"><sub>Hecho con 💚 y mucho café desde Colombia · <code>@samael-index</code></sub></p>
