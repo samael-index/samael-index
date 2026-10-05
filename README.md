@@ -1,6 +1,6 @@
 <!-- Banner -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:003b2f,100:00ff9c&height=220&section=header&text=samael-index&fontSize=56&fontColor=ffffff&fontAlignY=38&desc=Developer%20Junior%20%C2%B7%20Marketing%20%C2%B7%20IA%20%C2%B7%20Automatizaciones&descSize=18&descAlignY=60&animation=fadeIn" alt="banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,60:0d1117,100:002a1f&height=220&section=header&text=samael-index&fontSize=56&fontColor=00ff9c&fontAlignY=38&desc=Developer%20Junior%20%C2%B7%20Marketing%20%C2%B7%20IA%20%C2%B7%20Automatizaciones&descSize=18&descAlignY=60&descColor=8b949e&animation=fadeIn" alt="banner" />
 </p>
 
 <p align="center">
@@ -49,11 +49,11 @@
 ### 📊 GitHub Stats
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=samael-index&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&include_all_commits=true" alt="stats" />
-  <img height="170" src="https://streak-stats.demolab.com?user=samael-index&theme=tokyonight&hide_border=true" alt="streak" />
+  <img height="170" src="https://github-readme-stats.vercel.app/api?username=samael-index&show_icons=true&theme=github_dark&bg_color=0d1117&title_color=00ff9c&icon_color=00ff9c&hide_border=true&count_private=true&include_all_commits=true" alt="stats" />
+  <img height="170" src="https://streak-stats.demolab.com?user=samael-index&theme=github-dark-blue&background=0d1117&ring=00ff9c&fire=00ff9c&currStreakLabel=00ff9c&hide_border=true" alt="streak" />
 </p>
 
 <!-- Footer -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ff9c,50:003b2f,100:0d1117&height=120&section=footer" alt="footer" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:002a1f,40:0d1117,100:000000&height=120&section=footer" alt="footer" />
 </p>
