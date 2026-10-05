@@ -53,14 +53,6 @@
   <img height="170" src="https://streak-stats.demolab.com?user=samael-index&theme=tokyonight&hide_border=true" alt="streak" />
 </p>
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=samael-index&layout=compact&theme=tokyonight&hide_border=true" alt="top langs" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=samael-index&theme=tokyo-night&hide_border=true&area=true" alt="activity graph" />
-</p>
-
 <!-- Footer -->
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ff9c,50:003b2f,100:0d1117&height=120&section=footer" alt="footer" />
