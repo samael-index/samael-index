@@ -1,0 +1,18 @@
+SQL> SELECT
+  2  	 c.nombre AS cliente,
+  3  	 c.ciudad,
+  4  	 pr.nombre_producto,
+  5  	 pr.precio
+  6  FROM (
+  7  	 SELECT * FROM clientes WHERE ciudad = 'Cali'
+  8  ) c
+  9  CROSS JOIN (
+ 10  	 SELECT * FROM productos WHERE precio < 300000
+ 11  ) pr;
+
+CLIENTE 	     CIUDAD		  NOMBRE_PRODUCTO	   PRECIO
+-------------------- -------------------- -------------------- ----------
+Luis Rodríguez       Cali                 Mouse Logi               120000
+Luis Rodríguez       Cali                 Teclado Redragon         250000
+
+2 rows selected.

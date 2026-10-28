@@ -1,0 +1,16 @@
+SQL> SELECT
+  2  	 pr.producto_id,
+  3  	 pr.nombre_producto,
+  4  	 p.pedido_id,
+  5  	 p.monto
+  6  FROM pedidos p
+  7  RIGHT JOIN productos pr ON p.producto_id = pr.producto_id;
+
+PRODUCTO_ID NOMBRE_PRODUCTO	  PEDIDO_ID	 MONTO
+----------- -------------------- ---------- ----------
+	 10 Laptop HP			101    3500000
+	 20 Mouse Logi			102	120000
+	 30 Teclado Redragon		103	250000
+	 40 Monitor Dell		104    1200000
+
+4 rows selected.

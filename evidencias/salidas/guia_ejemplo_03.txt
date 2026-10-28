@@ -1,0 +1,17 @@
+SQL> SELECT
+  2  	 c.cliente_id,
+  3  	 c.nombre AS cliente,
+  4  	 p.pedido_id,
+  5  	 p.monto
+  6  FROM clientes c
+  7  LEFT JOIN pedidos p ON c.cliente_id = p.cliente_id;
+
+CLIENTE_ID CLIENTE		 PEDIDO_ID	MONTO
+---------- -------------------- ---------- ----------
+         1 Carlos Gómez                101    3500000
+         1 Carlos Gómez                102     120000
+         2 Ana Martínez                103     250000
+         4 Sofia López
+         3 Luis Rodríguez
+
+5 rows selected.

@@ -1,0 +1,26 @@
+SQL> SELECT
+  2  	 c.nombre AS cliente,
+  3  	 pr.nombre_producto
+  4  FROM clientes c
+  5  CROSS JOIN productos pr;
+
+CLIENTE 	     NOMBRE_PRODUCTO
+-------------------- --------------------
+Carlos Gómez         Laptop HP
+Carlos Gómez         Mouse Logi
+Carlos Gómez         Teclado Redragon
+Carlos Gómez         Monitor Dell
+Ana Martínez         Laptop HP
+Ana Martínez         Mouse Logi
+Ana Martínez         Teclado Redragon
+Ana Martínez         Monitor Dell
+Luis Rodríguez       Laptop HP
+Luis Rodríguez       Mouse Logi
+Luis Rodríguez       Teclado Redragon
+Luis Rodríguez       Monitor Dell
+Sofia López          Laptop HP
+Sofia López          Mouse Logi
+Sofia López          Teclado Redragon
+Sofia López          Monitor Dell
+
+16 rows selected.

@@ -1,0 +1,11 @@
+SQL> SELECT
+  2  	 c1.nombre AS cliente_1,
+  3  	 c2.nombre AS cliente_2,
+  4  	 c1.ciudad
+  5  FROM clientes c1
+  6  INNER JOIN (
+  7  	 SELECT cliente_id, nombre, ciudad
+  8  	 FROM clientes
+  9  ) c2 ON c1.ciudad = c2.ciudad AND c1.cliente_id < c2.cliente_id;
+
+no rows selected

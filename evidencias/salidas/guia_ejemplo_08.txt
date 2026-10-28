@@ -1,0 +1,21 @@
+SQL> SELECT
+  2  	 cb.nombre AS cliente_bogota,
+  3  	 p.pedido_id,
+  4  	 p_costosos.nombre_producto,
+  5  	 p_costosos.precio
+  6  FROM (
+  7  	 SELECT * FROM clientes WHERE ciudad = 'Bogotá'
+  8  ) cb
+  9  FULL JOIN pedidos p ON cb.cliente_id = p.cliente_id
+ 10  FULL JOIN (
+ 11  	 SELECT * FROM productos WHERE precio > 500000
+ 12  ) p_costosos ON p.producto_id = p_costosos.producto_id;
+
+CLIENTE_BOGOTA	      PEDIDO_ID NOMBRE_PRODUCTO 	 PRECIO
+-------------------- ---------- -------------------- ----------
+Carlos Gómez                101 Laptop HP               3500000
+Carlos Gómez                102
+			    103
+			    104 Monitor Dell		1200000
+
+4 rows selected.

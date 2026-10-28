@@ -1,0 +1,20 @@
+SQL> SELECT
+  2  	 c_filtrados.nombre AS cliente,
+  3  	 c_filtrados.ciudad,
+  4  	 pr.nombre_producto
+  5  FROM pedidos p
+  6  INNER JOIN (
+  7  	 SELECT cliente_id, nombre, ciudad
+  8  	 FROM clientes
+  9  	 WHERE ciudad IN ('Bogotá', 'Medellín')
+ 10  ) c_filtrados ON p.cliente_id = c_filtrados.cliente_id
+ 11  RIGHT JOIN productos pr ON p.producto_id = pr.producto_id;
+
+CLIENTE 	     CIUDAD		  NOMBRE_PRODUCTO
+-------------------- -------------------- --------------------
+Carlos Gómez         Bogotá               Laptop HP
+Carlos Gómez         Bogotá               Mouse Logi
+Ana Martínez         Medellín             Teclado Redragon
+					  Monitor Dell
+
+4 rows selected.

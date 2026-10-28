@@ -1,0 +1,18 @@
+SQL> SELECT
+  2  	 p1.nombre_producto AS producto_mayor,
+  3  	 p1.precio AS precio_mayor,
+  4  	 p2.nombre_producto AS producto_menor,
+  5  	 p2.precio AS precio_menor
+  6  FROM productos p1
+  7  INNER JOIN productos p2 ON p1.precio > p2.precio;
+
+PRODUCTO_MAYOR	     PRECIO_MAYOR PRODUCTO_MENOR       PRECIO_MENOR
+-------------------- ------------ -------------------- ------------
+Laptop HP		  3500000 Monitor Dell		    1200000
+Laptop HP		  3500000 Teclado Redragon	     250000
+Laptop HP		  3500000 Mouse Logi		     120000
+Monitor Dell		  1200000 Teclado Redragon	     250000
+Monitor Dell		  1200000 Mouse Logi		     120000
+Teclado Redragon	   250000 Mouse Logi		     120000
+
+6 rows selected.

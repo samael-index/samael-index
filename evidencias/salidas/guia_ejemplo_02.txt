@@ -1,0 +1,17 @@
+SQL> SELECT
+  2  	 c.nombre AS cliente,
+  3  	 pr.nombre_producto,
+  4  	 p.monto
+  5  FROM pedidos p
+  6  INNER JOIN clientes c ON p.cliente_id = c.cliente_id
+  7  INNER JOIN productos pr ON p.producto_id = pr.producto_id
+  8  WHERE p.monto > (
+  9  	 SELECT AVG(monto)
+ 10  	 FROM pedidos
+ 11  );
+
+CLIENTE 	     NOMBRE_PRODUCTO	       MONTO
+-------------------- -------------------- ----------
+Carlos Gómez         Laptop HP               3500000
+
+1 row selected.

@@ -1,0 +1,17 @@
+SQL> SELECT
+  2  	 c.nombre AS cliente,
+  3  	 p.pedido_id,
+  4  	 p.monto
+  5  FROM clientes c
+  6  FULL JOIN pedidos p ON c.cliente_id = p.cliente_id;
+
+CLIENTE 	      PEDIDO_ID      MONTO
+-------------------- ---------- ----------
+Carlos Gómez                101    3500000
+Carlos Gómez                102     120000
+Ana Martínez                103     250000
+			    104    1200000
+Sofia López
+Luis Rodríguez
+
+6 rows selected.

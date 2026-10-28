@@ -1,0 +1,34 @@
+SQL> CREATE TABLE clientes (
+  2  	 cliente_id NUMBER PRIMARY KEY,
+  3  	 nombre VARCHAR2(50) NOT NULL,
+  4  	 ciudad VARCHAR2(50)
+  5  );
+
+Table created.
+
+SQL> INSERT INTO clientes VALUES (1, 'Carlos Gómez', 'Bogotá');
+
+1 row created.
+
+SQL> INSERT INTO clientes VALUES (2, 'Ana Martínez', 'Medellín');
+
+1 row created.
+
+SQL> INSERT INTO clientes VALUES (3, 'Luis Rodríguez', 'Cali');
+
+1 row created.
+
+SQL> INSERT INTO clientes VALUES (4, 'Sofia López', 'Barranquilla');
+
+1 row created.
+
+SQL> SELECT * FROM clientes;
+
+CLIENTE_ID NOMBRE		CIUDAD
+---------- -------------------- --------------------
+         1 Carlos Gómez         Bogotá
+         2 Ana Martínez         Medellín
+         3 Luis Rodríguez       Cali
+         4 Sofia López          Barranquilla
+
+4 rows selected.

@@ -1,0 +1,77 @@
+[
+ {
+  "id": "guia_tabla_clientes",
+  "title": "Tabla clientes",
+  "code": "CREATE TABLE clientes (\n    cliente_id NUMBER PRIMARY KEY,\n    nombre VARCHAR2(50) NOT NULL,\n    ciudad VARCHAR2(50)\n);\nINSERT INTO clientes VALUES (1, 'Carlos Gómez', 'Bogotá');\nINSERT INTO clientes VALUES (2, 'Ana Martínez', 'Medellín');\nINSERT INTO clientes VALUES (3, 'Luis Rodríguez', 'Cali');\nINSERT INTO clientes VALUES (4, 'Sofia López', 'Barranquilla');\nSELECT * FROM clientes;"
+ },
+ {
+  "id": "guia_tabla_productos",
+  "title": "Tabla productos",
+  "code": "CREATE TABLE productos (\n    producto_id NUMBER PRIMARY KEY,\n    nombre_producto VARCHAR2(50) NOT NULL,\n    precio NUMBER(10,2)\n);\nINSERT INTO productos VALUES (10, 'Laptop HP', 3500000);\nINSERT INTO productos VALUES (20, 'Mouse Logi', 120000);\nINSERT INTO productos VALUES (30, 'Teclado Redragon', 250000);\nINSERT INTO productos VALUES (40, 'Monitor Dell', 1200000);\nSELECT * FROM productos;"
+ },
+ {
+  "id": "guia_tabla_pedidos",
+  "title": "Tabla pedidos",
+  "code": "CREATE TABLE pedidos (\n    pedido_id NUMBER PRIMARY KEY,\n    cliente_id NUMBER REFERENCES clientes(cliente_id),\n    producto_id NUMBER,\n    fecha DATE DEFAULT SYSDATE,\n    monto NUMBER(10,2)\n);\nINSERT INTO pedidos VALUES (101, 1, 10, SYSDATE - 5, 3500000);\nINSERT INTO pedidos VALUES (102, 1, 20, SYSDATE - 2, 120000);\nINSERT INTO pedidos VALUES (103, 2, 30, SYSDATE - 1, 250000);\nINSERT INTO pedidos VALUES (104, NULL, 40, SYSDATE, 1200000);\nCOMMIT;\nSELECT * FROM pedidos;"
+ },
+ {
+  "id": "guia_ejemplo_01",
+  "title": "Ejemplo 1: INNER JOIN entre pedidos, clientes y productos",
+  "code": "SELECT\n    p.pedido_id,\n    c.nombre AS cliente,\n    pr.nombre_producto,\n    p.monto\nFROM pedidos p\nINNER JOIN clientes c ON p.cliente_id = c.cliente_id\nINNER JOIN productos pr ON p.producto_id = pr.producto_id;"
+ },
+ {
+  "id": "guia_ejemplo_02",
+  "title": "Ejemplo 2: INNER JOIN con subconsulta en WHERE (monto sobre el promedio)",
+  "code": "SELECT\n    c.nombre AS cliente,\n    pr.nombre_producto,\n    p.monto\nFROM pedidos p\nINNER JOIN clientes c ON p.cliente_id = c.cliente_id\nINNER JOIN productos pr ON p.producto_id = pr.producto_id\nWHERE p.monto > (\n    SELECT AVG(monto)\n    FROM pedidos\n);"
+ },
+ {
+  "id": "guia_ejemplo_03",
+  "title": "Ejemplo 3: LEFT JOIN de clientes con pedidos",
+  "code": "SELECT\n    c.cliente_id,\n    c.nombre AS cliente,\n    p.pedido_id,\n    p.monto\nFROM clientes c\nLEFT JOIN pedidos p ON c.cliente_id = p.cliente_id;"
+ },
+ {
+  "id": "guia_ejemplo_04",
+  "title": "Ejemplo 4: LEFT JOIN con subconsulta de pedidos recientes",
+  "code": "SELECT\n    c.nombre AS cliente,\n    recientes.pedido_id,\n    recientes.monto,\n    recientes.fecha\nFROM clientes c\nLEFT JOIN (\n    SELECT pedido_id, cliente_id, monto, fecha\n    FROM pedidos\n    WHERE fecha >= SYSDATE - 3\n) recientes ON c.cliente_id = recientes.cliente_id;"
+ },
+ {
+  "id": "guia_ejemplo_05",
+  "title": "Ejemplo 5: RIGHT JOIN de pedidos con productos",
+  "code": "SELECT\n    pr.producto_id,\n    pr.nombre_producto,\n    p.pedido_id,\n    p.monto\nFROM pedidos p\nRIGHT JOIN productos pr ON p.producto_id = pr.producto_id;"
+ },
+ {
+  "id": "guia_ejemplo_06",
+  "title": "Ejemplo 6: INNER JOIN con subconsulta y RIGHT JOIN",
+  "code": "SELECT\n    c_filtrados.nombre AS cliente,\n    c_filtrados.ciudad,\n    pr.nombre_producto\nFROM pedidos p\nINNER JOIN (\n    SELECT cliente_id, nombre, ciudad\n    FROM clientes\n    WHERE ciudad IN ('Bogotá', 'Medellín')\n) c_filtrados ON p.cliente_id = c_filtrados.cliente_id\nRIGHT JOIN productos pr ON p.producto_id = pr.producto_id;"
+ },
+ {
+  "id": "guia_ejemplo_07",
+  "title": "Ejemplo 7: FULL JOIN de clientes con pedidos",
+  "code": "SELECT\n    c.nombre AS cliente,\n    p.pedido_id,\n    p.monto\nFROM clientes c\nFULL JOIN pedidos p ON c.cliente_id = p.cliente_id;"
+ },
+ {
+  "id": "guia_ejemplo_08",
+  "title": "Ejemplo 8: FULL JOIN con subconsultas filtradas",
+  "code": "SELECT\n    cb.nombre AS cliente_bogota,\n    p.pedido_id,\n    p_costosos.nombre_producto,\n    p_costosos.precio\nFROM (\n    SELECT * FROM clientes WHERE ciudad = 'Bogotá'\n) cb\nFULL JOIN pedidos p ON cb.cliente_id = p.cliente_id\nFULL JOIN (\n    SELECT * FROM productos WHERE precio > 500000\n) p_costosos ON p.producto_id = p_costosos.producto_id;"
+ },
+ {
+  "id": "guia_ejemplo_09",
+  "title": "Ejemplo 9: CROSS JOIN de clientes y productos",
+  "code": "SELECT\n    c.nombre AS cliente,\n    pr.nombre_producto\nFROM clientes c\nCROSS JOIN productos pr;"
+ },
+ {
+  "id": "guia_ejemplo_10",
+  "title": "Ejemplo 10: CROSS JOIN con subconsultas filtradas",
+  "code": "SELECT\n    c.nombre AS cliente,\n    c.ciudad,\n    pr.nombre_producto,\n    pr.precio\nFROM (\n    SELECT * FROM clientes WHERE ciudad = 'Cali'\n) c\nCROSS JOIN (\n    SELECT * FROM productos WHERE precio < 300000\n) pr;"
+ },
+ {
+  "id": "guia_ejemplo_11",
+  "title": "Ejemplo 11: SELF JOIN de productos (precio mayor vs menor)",
+  "code": "SELECT\n    p1.nombre_producto AS producto_mayor,\n    p1.precio AS precio_mayor,\n    p2.nombre_producto AS producto_menor,\n    p2.precio AS precio_menor\nFROM productos p1\nINNER JOIN productos p2 ON p1.precio > p2.precio;"
+ },
+ {
+  "id": "guia_ejemplo_12",
+  "title": "Ejemplo 12: SELF JOIN con subconsulta (clientes de la misma ciudad)",
+  "code": "SELECT\n    c1.nombre AS cliente_1,\n    c2.nombre AS cliente_2,\n    c1.ciudad\nFROM clientes c1\nINNER JOIN (\n    SELECT cliente_id, nombre, ciudad\n    FROM clientes\n) c2 ON c1.ciudad = c2.ciudad AND c1.cliente_id < c2.cliente_id;"
+ }
+]

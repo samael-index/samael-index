@@ -1,0 +1,16 @@
+SQL> SELECT
+  2  	 p.pedido_id,
+  3  	 c.nombre AS cliente,
+  4  	 pr.nombre_producto,
+  5  	 p.monto
+  6  FROM pedidos p
+  7  INNER JOIN clientes c ON p.cliente_id = c.cliente_id
+  8  INNER JOIN productos pr ON p.producto_id = pr.producto_id;
+
+ PEDIDO_ID CLIENTE		NOMBRE_PRODUCTO 	  MONTO
+---------- -------------------- -------------------- ----------
+       101 Carlos Gómez         Laptop HP               3500000
+       102 Carlos Gómez         Mouse Logi               120000
+       103 Ana Martínez         Teclado Redragon         250000
+
+3 rows selected.

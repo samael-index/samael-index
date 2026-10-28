@@ -1,0 +1,20 @@
+SQL> SELECT
+  2  	 c.nombre AS cliente,
+  3  	 recientes.pedido_id,
+  4  	 recientes.monto,
+  5  	 recientes.fecha
+  6  FROM clientes c
+  7  LEFT JOIN (
+  8  	 SELECT pedido_id, cliente_id, monto, fecha
+  9  	 FROM pedidos
+ 10  	 WHERE fecha >= SYSDATE - 3
+ 11  ) recientes ON c.cliente_id = recientes.cliente_id;
+
+CLIENTE 	      PEDIDO_ID      MONTO FECHA
+-------------------- ---------- ---------- ----------
+Carlos Gómez                102     120000 26-OCT-26
+Ana Martínez                103     250000 27-OCT-26
+Sofia López
+Luis Rodríguez
+
+4 rows selected.

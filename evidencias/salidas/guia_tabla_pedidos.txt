@@ -1,0 +1,40 @@
+SQL> CREATE TABLE pedidos (
+  2  	 pedido_id NUMBER PRIMARY KEY,
+  3  	 cliente_id NUMBER REFERENCES clientes(cliente_id),
+  4  	 producto_id NUMBER,
+  5  	 fecha DATE DEFAULT SYSDATE,
+  6  	 monto NUMBER(10,2)
+  7  );
+
+Table created.
+
+SQL> INSERT INTO pedidos VALUES (101, 1, 10, SYSDATE - 5, 3500000);
+
+1 row created.
+
+SQL> INSERT INTO pedidos VALUES (102, 1, 20, SYSDATE - 2, 120000);
+
+1 row created.
+
+SQL> INSERT INTO pedidos VALUES (103, 2, 30, SYSDATE - 1, 250000);
+
+1 row created.
+
+SQL> INSERT INTO pedidos VALUES (104, NULL, 40, SYSDATE, 1200000);
+
+1 row created.
+
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT * FROM pedidos;
+
+ PEDIDO_ID CLIENTE_ID PRODUCTO_ID FECHA 	  MONTO
+---------- ---------- ----------- ---------- ----------
+       101	    1	       10 23-OCT-26	3500000
+       102	    1	       20 26-OCT-26	 120000
+       103	    2	       30 27-OCT-26	 250000
+       104		       40 28-OCT-26	1200000
+
+4 rows selected.
