@@ -1,0 +1,12 @@
+SQL> SELECT e.department_id, e.last_name, e.job_id
+  2  FROM employees e
+  3  JOIN departments d ON e.department_id = d.department_id
+  4  WHERE d.department_name = 'Executive';
+
+DEPARTMENT_ID LAST_NAME    JOB_ID
+------------- ------------ ----------
+	   90 King	   AD_PRES
+	   90 Kochhar	   AD_VP
+	   90 De Haan	   AD_VP
+
+3 rows selected.

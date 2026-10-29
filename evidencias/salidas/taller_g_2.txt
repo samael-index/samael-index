@@ -1,0 +1,120 @@
+SQL> SELECT e.last_name, j.job_title, d.department_name, e.salary, g.grade_level
+  2  FROM employees e
+  3  JOIN jobs j ON e.job_id = j.job_id
+  4  LEFT JOIN departments d ON e.department_id = d.department_id
+  5  JOIN job_grades g ON e.salary BETWEEN g.lowest_sal AND g.highest_sal;
+
+LAST_NAME    JOB_TITLE				  DEPARTMENT_NAME	 SALARY GRA
+------------ ------------------------------------ ------------------ ---------- ---
+Whalen	     Administration Assistant		  Administration	   4400 B
+Fay	     Marketing Representative		  Marketing		   6000 C
+Hartstein    Marketing Manager			  Marketing		  13000 D
+Colmenares   Purchasing Clerk			  Purchasing		   2500 A
+Himuro	     Purchasing Clerk			  Purchasing		   2600 A
+Tobias	     Purchasing Clerk			  Purchasing		   2800 A
+Baida	     Purchasing Clerk			  Purchasing		   2900 A
+Khoo	     Purchasing Clerk			  Purchasing		   3100 B
+Raphaely     Purchasing Manager 		  Purchasing		  11000 D
+Mavris	     Human Resources Representative	  Human Resources	   6500 C
+Olson	     Stock Clerk			  Shipping		   2100 A
+Markle	     Stock Clerk			  Shipping		   2200 A
+Philtanker   Stock Clerk			  Shipping		   2200 A
+Landry	     Stock Clerk			  Shipping		   2400 A
+Gee	     Stock Clerk			  Shipping		   2400 A
+Marlow	     Stock Clerk			  Shipping		   2500 A
+Patel	     Stock Clerk			  Shipping		   2500 A
+Vargas	     Stock Clerk			  Shipping		   2500 A
+Sullivan     Shipping Clerk			  Shipping		   2500 A
+Perkins      Shipping Clerk			  Shipping		   2500 A
+Matos	     Stock Clerk			  Shipping		   2600 A
+OConnell     Shipping Clerk			  Shipping		   2600 A
+Grant	     Shipping Clerk			  Shipping		   2600 A
+Mikkilineni  Stock Clerk			  Shipping		   2700 A
+Seo	     Stock Clerk			  Shipping		   2700 A
+Atkinson     Stock Clerk			  Shipping		   2800 A
+Geoni	     Shipping Clerk			  Shipping		   2800 A
+Jones	     Shipping Clerk			  Shipping		   2800 A
+Rogers	     Stock Clerk			  Shipping		   2900 A
+Gates	     Shipping Clerk			  Shipping		   2900 A
+Cabrio	     Shipping Clerk			  Shipping		   3000 B
+Feeney	     Shipping Clerk			  Shipping		   3000 B
+Davies	     Stock Clerk			  Shipping		   3100 B
+Fleaur	     Shipping Clerk			  Shipping		   3100 B
+Walsh	     Shipping Clerk			  Shipping		   3100 B
+Nayer	     Stock Clerk			  Shipping		   3200 B
+Stiles	     Stock Clerk			  Shipping		   3200 B
+Taylor	     Shipping Clerk			  Shipping		   3200 B
+McCain	     Shipping Clerk			  Shipping		   3200 B
+Bissot	     Stock Clerk			  Shipping		   3300 B
+Mallin	     Stock Clerk			  Shipping		   3300 B
+Dellinger    Shipping Clerk			  Shipping		   3400 B
+Rajs	     Stock Clerk			  Shipping		   3500 B
+Ladwig	     Stock Clerk			  Shipping		   3600 B
+Dilly	     Shipping Clerk			  Shipping		   3600 B
+Chung	     Shipping Clerk			  Shipping		   3800 B
+Everett      Shipping Clerk			  Shipping		   3900 B
+Bell	     Shipping Clerk			  Shipping		   4000 B
+Bull	     Shipping Clerk			  Shipping		   4100 B
+Sarchand     Shipping Clerk			  Shipping		   4200 B
+Mourgos      Stock Manager			  Shipping		   5800 B
+Vollman      Stock Manager			  Shipping		   6500 C
+Kaufling     Stock Manager			  Shipping		   7900 C
+Weiss	     Stock Manager			  Shipping		   8000 C
+Fripp	     Stock Manager			  Shipping		   8200 C
+Lorentz      Programmer 			  IT			   4200 B
+Austin	     Programmer 			  IT			   4800 B
+
+LAST_NAME    JOB_TITLE				  DEPARTMENT_NAME	 SALARY GRA
+------------ ------------------------------------ ------------------ ---------- ---
+Pataballa    Programmer 			  IT			   4800 B
+Ernst	     Programmer 			  IT			   6000 C
+Hunold	     Programmer 			  IT			   9000 C
+Baer	     Public Relations Representative	  Public Relations	  10000 D
+Kumar	     Sales Representative		  Sales 		   6100 C
+Banda	     Sales Representative		  Sales 		   6200 C
+Johnson      Sales Representative		  Sales 		   6200 C
+Ande	     Sales Representative		  Sales 		   6400 C
+Lee	     Sales Representative		  Sales 		   6800 C
+Tuvault      Sales Representative		  Sales 		   7000 C
+Sewall	     Sales Representative		  Sales 		   7000 C
+Marvins      Sales Representative		  Sales 		   7200 C
+Bates	     Sales Representative		  Sales 		   7300 C
+Smith	     Sales Representative		  Sales 		   7400 C
+Cambrault    Sales Representative		  Sales 		   7500 C
+Doran	     Sales Representative		  Sales 		   7500 C
+Olsen	     Sales Representative		  Sales 		   8000 C
+Smith	     Sales Representative		  Sales 		   8000 C
+Livingston   Sales Representative		  Sales 		   8400 C
+Taylor	     Sales Representative		  Sales 		   8600 C
+Hutton	     Sales Representative		  Sales 		   8800 C
+Hall	     Sales Representative		  Sales 		   9000 C
+McEwen	     Sales Representative		  Sales 		   9000 C
+Sully	     Sales Representative		  Sales 		   9500 C
+Greene	     Sales Representative		  Sales 		   9500 C
+Bernstein    Sales Representative		  Sales 		   9500 C
+Fox	     Sales Representative		  Sales 		   9600 C
+Bloom	     Sales Representative		  Sales 		  10000 D
+King	     Sales Representative		  Sales 		  10000 D
+Tucker	     Sales Representative		  Sales 		  10000 D
+Vishney      Sales Representative		  Sales 		  10500 D
+Zlotkey      Sales Manager			  Sales 		  10500 D
+Cambrault    Sales Manager			  Sales 		  11000 D
+Abel	     Sales Representative		  Sales 		  11000 D
+Ozer	     Sales Representative		  Sales 		  11500 D
+Errazuriz    Sales Manager			  Sales 		  12000 D
+Partners     Sales Manager			  Sales 		  13500 D
+Russell      Sales Manager			  Sales 		  14000 D
+De Haan      Administration Vice President	  Executive		  17000 E
+Kochhar      Administration Vice President	  Executive		  17000 E
+King	     President				  Executive		  24000 E
+Popp	     Accountant 			  Finance		   6900 C
+Sciarra      Accountant 			  Finance		   7700 C
+Urman	     Accountant 			  Finance		   7800 C
+Chen	     Accountant 			  Finance		   8200 C
+Faviet	     Accountant 			  Finance		   9000 C
+Greenberg    Finance Manager			  Finance		  12008 D
+Gietz	     Public Accountant			  Accounting		   8300 C
+Higgins      Accounting Manager 		  Accounting		  12008 D
+Grant	     Sales Representative					   7000 C
+
+107 rows selected.

@@ -1,0 +1,22 @@
+SQL> CREATE TABLESPACE taller_tblspc
+  2  DATAFILE '/opt/oracle/oradata/XE/XEPDB1/taller_tblspc01.dbf'
+  3  SIZE 50M
+  4  AUTOEXTEND ON
+  5  NEXT 10M
+  6  MAXSIZE UNLIMITED
+  7  SEGMENT SPACE MANAGEMENT AUTO;
+
+Tablespace created.
+
+SQL> 
+SQL> CREATE USER taller IDENTIFIED BY taller_pwd
+  2  DEFAULT TABLESPACE taller_tblspc
+  3  TEMPORARY TABLESPACE temp
+  4  QUOTA UNLIMITED ON taller_tblspc;
+
+User created.
+
+SQL> 
+SQL> GRANT CREATE SESSION, CREATE TABLE, CREATE VIEW, CREATE SEQUENCE, CREATE PROCEDURE, CREATE TRIGGER TO taller;
+
+Grant succeeded.

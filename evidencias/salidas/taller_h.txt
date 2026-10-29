@@ -1,0 +1,92 @@
+SQL> SELECT e.first_name || ' ' || e.last_name AS nombre, e.hire_date
+  2  FROM employees e
+  3  JOIN employees dv ON dv.last_name = 'Davies' AND dv.hire_date < e.hire_date;
+
+NOMBRE			 HIRE_DATE
+------------------------ ------------------
+Neena Kochhar		 21-SEP-05
+Alexander Hunold	 03-JAN-06
+Bruce Ernst		 21-MAY-07
+David Austin		 25-JUN-05
+Valli Pataballa 	 05-FEB-06
+Diana Lorentz		 07-FEB-07
+John Chen		 28-SEP-05
+Ismael Sciarra		 30-SEP-05
+Jose Manuel Urman	 07-MAR-06
+Luis Popp		 07-DEC-07
+Shelli Baida		 24-DEC-05
+Sigal Tobias		 24-JUL-05
+Guy Himuro		 15-NOV-06
+Karen Colmenares	 10-AUG-07
+Adam Fripp		 10-APR-05
+Shanta Vollman		 10-OCT-05
+Kevin Mourgos		 16-NOV-07
+Julia Nayer		 16-JUL-05
+Irene Mikkilineni	 28-SEP-06
+James Landry		 14-JAN-07
+Steven Markle		 08-MAR-08
+Laura Bissot		 20-AUG-05
+Mozhe Atkinson		 30-OCT-05
+James Marlow		 16-FEB-05
+TJ Olson		 10-APR-07
+Michael Rogers		 26-AUG-06
+Ki Gee			 12-DEC-07
+Hazel Philtanker	 06-FEB-08
+Stephen Stiles		 26-OCT-05
+John Seo		 12-FEB-06
+Joshua Patel		 06-APR-06
+Randall Matos		 15-MAR-06
+Peter Vargas		 09-JUL-06
+Alberto Errazuriz	 10-MAR-05
+Gerald Cambrault	 15-OCT-07
+Eleni Zlotkey		 29-JAN-08
+Peter Tucker		 30-JAN-05
+David Bernstein 	 24-MAR-05
+Peter Hall		 20-AUG-05
+Christopher Olsen	 30-MAR-06
+Nanette Cambrault	 09-DEC-06
+Oliver Tuvault		 23-NOV-07
+Lindsey Smith		 10-MAR-05
+Louise Doran		 15-DEC-05
+Sarath Sewall		 03-NOV-06
+Clara Vishney		 11-NOV-05
+Danielle Greene 	 19-MAR-07
+Mattea Marvins		 24-JAN-08
+David Lee		 23-FEB-08
+Sundar Ande		 24-MAR-08
+Amit Banda		 21-APR-08
+Lisa Ozer		 11-MAR-05
+Harrison Bloom		 23-MAR-06
+Tayler Fox		 24-JAN-06
+William Smith		 23-FEB-07
+Elizabeth Bates 	 24-MAR-07
+Sundita Kumar		 21-APR-08
+
+NOMBRE			 HIRE_DATE
+------------------------ ------------------
+Alyssa Hutton		 19-MAR-05
+Jonathon Taylor 	 24-MAR-06
+Jack Livingston 	 23-APR-06
+Kimberely Grant 	 24-MAY-07
+Charles Johnson 	 04-JAN-08
+Winston Taylor		 24-JAN-06
+Jean Fleaur		 23-FEB-06
+Martha Sullivan 	 21-JUN-07
+Girard Geoni		 03-FEB-08
+Alexis Bull		 20-FEB-05
+Julia Dellinger 	 24-JUN-06
+Anthony Cabrio		 07-FEB-07
+Kelly Chung		 14-JUN-05
+Jennifer Dilly		 13-AUG-05
+Timothy Gates		 11-JUL-06
+Randall Perkins 	 19-DEC-07
+Britney Everett 	 03-MAR-05
+Samuel McCain		 01-JUL-06
+Vance Jones		 17-MAR-07
+Alana Walsh		 24-APR-06
+Kevin Feeney		 23-MAY-06
+Donald OConnell 	 21-JUN-07
+Douglas Grant		 13-JAN-08
+Pat Fay 		 17-AUG-05
+
+81 rows selected.

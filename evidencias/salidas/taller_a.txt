@@ -1,0 +1,47 @@
+SQL> SELECT l.location_id, l.street_address, l.city, l.state_province, c.country_name
+  2  FROM locations l
+  3  JOIN countries c ON l.country_id = c.country_id;
+
+LOCATION_ID STREET_ADDRESS		 CITY		STATE_PROVINCE COUNTRY_NAME
+----------- ---------------------------- -------------- -------------- --------------
+       1000 1297 Via Cola di Rie	 Roma			       Italy
+       1100 93091 Calle della Testa	 Venice 		       Italy
+       1200 2017 Shinjuku-ku		 Tokyo		Tokyo Prefectu Japan
+							re
+
+       1300 9450 Kamiya-cho		 Hiroshima		       Japan
+       1400 2014 Jabberwocky Rd 	 Southlake	Texas	       United States
+								       of America
+
+       1500 2011 Interiors Blvd 	 South San Fran California     United States
+					 cisco			       of America
+
+       1600 2007 Zagora St		 South Brunswic New Jersey     United States
+					 k			       of America
+
+       1700 2004 Charade Rd		 Seattle	Washington     United States
+								       of America
+
+       1800 147 Spadina Ave		 Toronto	Ontario        Canada
+       1900 6092 Boxwood St		 Whitehorse	Yukon	       Canada
+       2000 40-5-12 Laogianggen 	 Beijing		       China
+       2100 1298 Vileparle (E)		 Bombay 	Maharashtra    India
+       2200 12-98 Victoria Street	 Sydney 	New South Wale Australia
+							s
+
+       2300 198 Clementi North		 Singapore		       Singapore
+       2400 8204 Arthur St		 London 		       United Kingdom
+       2500 Magdalen Centre, The Oxford  Oxford 	Oxford	       United Kingdom
+	    Science Park
+
+       2600 9702 Chester Road		 Stretford	Manchester     United Kingdom
+       2700 Schwanthalerstr. 7031	 Munich 	Bavaria        Germany
+       2800 Rua Frei Caneca 1360	 Sao Paulo	Sao Paulo      Brazil
+       2900 20 Rue des Corps-Saints	 Geneva 	Geneve	       Switzerland
+       3000 Murtenstrasse 921		 Bern		BE	       Switzerland
+       3100 Pieter Breughelstraat 837	 Utrecht	Utrecht        Netherlands
+       3200 Mariano Escobedo 9991	 Mexico City	Distrito Feder Mexico
+							al,
+
+
+23 rows selected.

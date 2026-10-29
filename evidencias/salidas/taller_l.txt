@@ -1,0 +1,107 @@
+SQL> SELECT employee_id, last_name
+  2  FROM employees
+  3  WHERE department_id IN (SELECT department_id FROM employees WHERE LOWER(last_name) LIKE '%u%');
+
+EMPLOYEE_ID LAST_NAME
+----------- ------------
+	103 Hunold
+	104 Ernst
+	105 Austin
+	106 Pataballa
+	107 Lorentz
+	120 Weiss
+	121 Fripp
+	122 Kaufling
+	123 Vollman
+	124 Mourgos
+	125 Nayer
+	126 Mikkilineni
+	127 Landry
+	128 Markle
+	129 Bissot
+	130 Atkinson
+	131 Marlow
+	132 Olson
+	133 Mallin
+	134 Rogers
+	135 Gee
+	136 Philtanker
+	137 Ladwig
+	138 Stiles
+	139 Seo
+	140 Patel
+	141 Rajs
+	142 Davies
+	143 Matos
+	144 Vargas
+	180 Taylor
+	181 Fleaur
+	182 Sullivan
+	183 Geoni
+	184 Sarchand
+	185 Bull
+	186 Dellinger
+	187 Cabrio
+	188 Chung
+	189 Dilly
+	190 Gates
+	191 Perkins
+	192 Bell
+	193 Everett
+	194 McCain
+	195 Jones
+	196 Walsh
+	197 Feeney
+	198 OConnell
+	199 Grant
+	145 Russell
+	146 Partners
+	147 Errazuriz
+	148 Cambrault
+	149 Zlotkey
+	150 Tucker
+	151 Bernstein
+
+EMPLOYEE_ID LAST_NAME
+----------- ------------
+	152 Hall
+	153 Olsen
+	154 Cambrault
+	155 Tuvault
+	156 King
+	157 Sully
+	158 McEwen
+	159 Smith
+	160 Doran
+	161 Sewall
+	162 Vishney
+	163 Greene
+	164 Marvins
+	165 Lee
+	166 Ande
+	167 Banda
+	168 Ozer
+	169 Bloom
+	170 Fox
+	171 Smith
+	172 Bates
+	173 Kumar
+	174 Abel
+	175 Hutton
+	176 Taylor
+	177 Livingston
+	179 Johnson
+	114 Raphaely
+	115 Khoo
+	116 Baida
+	117 Tobias
+	118 Himuro
+	119 Colmenares
+	108 Greenberg
+	109 Faviet
+	110 Chen
+	111 Sciarra
+	112 Urman
+	113 Popp
+
+96 rows selected.

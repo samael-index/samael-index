@@ -1,0 +1,15 @@
+SQL> SELECT e.last_name, j.job_title, e.department_id, d.department_name
+  2  FROM employees e
+  3  JOIN departments d ON e.department_id = d.department_id
+  4  JOIN locations l ON d.location_id = l.location_id
+  5  JOIN jobs j ON e.job_id = j.job_id
+  6  WHERE l.city = 'Toronto';
+
+LAST_NAME    JOB_TITLE		    DEPARTMENT_ID DEPARTMENT_NAME
+------------ ---------------------- ------------- ------------------
+Hartstein    Marketing Manager		       20 Marketing
+Fay	     Marketing Representati	       20 Marketing
+	     ve
+
+
+2 rows selected.

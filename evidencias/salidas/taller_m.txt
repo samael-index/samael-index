@@ -1,0 +1,26 @@
+SQL> SELECT last_name, department_id, job_id
+  2  FROM employees
+  3  WHERE department_id IN (SELECT department_id FROM departments WHERE location_id = 1700);
+
+LAST_NAME    DEPARTMENT_ID JOB_ID
+------------ ------------- ----------
+King			90 AD_PRES
+Kochhar 		90 AD_VP
+De Haan 		90 AD_VP
+Greenberg	       100 FI_MGR
+Faviet		       100 FI_ACCOUNT
+Chen		       100 FI_ACCOUNT
+Sciarra 	       100 FI_ACCOUNT
+Urman		       100 FI_ACCOUNT
+Popp		       100 FI_ACCOUNT
+Raphaely		30 PU_MAN
+Khoo			30 PU_CLERK
+Baida			30 PU_CLERK
+Tobias			30 PU_CLERK
+Himuro			30 PU_CLERK
+Colmenares		30 PU_CLERK
+Whalen			10 AD_ASST
+Higgins 	       110 AC_MGR
+Gietz		       110 AC_ACCOUNT
+
+18 rows selected.

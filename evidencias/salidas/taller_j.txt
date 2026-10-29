@@ -1,0 +1,60 @@
+SQL> DEFINE apellido = Davies
+SQL> SELECT last_name, hire_date
+  2  FROM employees
+  3  WHERE department_id IN (SELECT department_id FROM employees WHERE last_name = '&&apellido')
+  4  AND last_name <> '&&apellido';
+old   3: WHERE department_id IN (SELECT department_id FROM employees WHERE last_name = '&&apellido')
+new   3: WHERE department_id IN (SELECT department_id FROM employees WHERE last_name = 'Davies')
+old   4: AND last_name <> '&&apellido'
+new   4: AND last_name <> 'Davies'
+
+LAST_NAME    HIRE_DATE
+------------ ------------------
+Weiss	     18-JUL-04
+Fripp	     10-APR-05
+Kaufling     01-MAY-03
+Vollman      10-OCT-05
+Mourgos      16-NOV-07
+Nayer	     16-JUL-05
+Mikkilineni  28-SEP-06
+Landry	     14-JAN-07
+Markle	     08-MAR-08
+Bissot	     20-AUG-05
+Atkinson     30-OCT-05
+Marlow	     16-FEB-05
+Olson	     10-APR-07
+Mallin	     14-JUN-04
+Rogers	     26-AUG-06
+Gee	     12-DEC-07
+Philtanker   06-FEB-08
+Ladwig	     14-JUL-03
+Stiles	     26-OCT-05
+Seo	     12-FEB-06
+Patel	     06-APR-06
+Rajs	     17-OCT-03
+Matos	     15-MAR-06
+Vargas	     09-JUL-06
+Taylor	     24-JAN-06
+Fleaur	     23-FEB-06
+Sullivan     21-JUN-07
+Geoni	     03-FEB-08
+Sarchand     27-JAN-04
+Bull	     20-FEB-05
+Dellinger    24-JUN-06
+Cabrio	     07-FEB-07
+Chung	     14-JUN-05
+Dilly	     13-AUG-05
+Gates	     11-JUL-06
+Perkins      19-DEC-07
+Bell	     04-FEB-04
+Everett      03-MAR-05
+McCain	     01-JUL-06
+Jones	     17-MAR-07
+Walsh	     24-APR-06
+Feeney	     23-MAY-06
+OConnell     21-JUN-07
+Grant	     13-JAN-08
+
+44 rows selected.
+
+SQL> UNDEFINE apellido

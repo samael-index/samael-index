@@ -12,8 +12,8 @@ SQL> SELECT
 
 CLIENTE 	      PEDIDO_ID      MONTO FECHA
 -------------------- ---------- ---------- ----------
-Carlos Gómez                102     120000 26-OCT-26
-Ana Martínez                103     250000 27-OCT-26
+Carlos Gómez                102     120000 27-OCT-26
+Ana Martínez                103     250000 28-OCT-26
 Sofia López
 Luis Rodríguez
 

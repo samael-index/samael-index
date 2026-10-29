@@ -1,0 +1,169 @@
+[
+ {
+  "title": "Creación del esquema (tablespace, usuario taller y permisos) conectado como sys en xepdb1",
+  "parts": [
+   {
+    "id": "taller_00_esquema",
+    "code": "CREATE TABLESPACE taller_tblspc\nDATAFILE '/opt/oracle/oradata/XE/XEPDB1/taller_tblspc01.dbf'\nSIZE 50M\nAUTOEXTEND ON\nNEXT 10M\nMAXSIZE UNLIMITED\nSEGMENT SPACE MANAGEMENT AUTO;\n\nCREATE USER taller IDENTIFIED BY taller_pwd\nDEFAULT TABLESPACE taller_tblspc\nTEMPORARY TABLESPACE temp\nQUOTA UNLIMITED ON taller_tblspc;\n\nGRANT CREATE SESSION, CREATE TABLE, CREATE VIEW, CREATE SEQUENCE, CREATE PROCEDURE, CREATE TRIGGER TO taller;",
+    "label": "sys@xepdb1"
+   }
+  ]
+ },
+ {
+  "title": "Carga del script del instructor: filas por tabla (EMPLOYEES debe tener 107)",
+  "parts": [
+   {
+    "id": "taller_01_carga",
+    "code": "SELECT 'EMPLOYEES' AS tabla, COUNT(*) AS filas FROM employees\nUNION ALL SELECT 'DEPARTMENTS', COUNT(*) FROM departments\nUNION ALL SELECT 'LOCATIONS', COUNT(*) FROM locations\nUNION ALL SELECT 'COUNTRIES', COUNT(*) FROM countries\nUNION ALL SELECT 'REGIONS', COUNT(*) FROM regions\nUNION ALL SELECT 'JOBS', COUNT(*) FROM jobs\nUNION ALL SELECT 'JOB_HISTORY', COUNT(*) FROM job_history;"
+   }
+  ]
+ },
+ {
+  "title": "Creación de la tabla JOB_GRADES",
+  "parts": [
+   {
+    "id": "taller_02_job_grades",
+    "code": "CREATE TABLE job_grades (\n    grade_level VARCHAR2(3),\n    lowest_sal  NUMBER,\n    highest_sal NUMBER\n);\nINSERT INTO job_grades VALUES ('A', 1000, 2999);\nINSERT INTO job_grades VALUES ('B', 3000, 5999);\nINSERT INTO job_grades VALUES ('C', 6000, 9999);\nINSERT INTO job_grades VALUES ('D', 10000, 14999);\nINSERT INTO job_grades VALUES ('E', 15000, 24999);\nINSERT INTO job_grades VALUES ('F', 25000, 40000);\nCOMMIT;"
+   }
+  ]
+ },
+ {
+  "title": "a) Direcciones de las ubicaciones con el nombre de su país",
+  "parts": [
+   {
+    "id": "taller_a",
+    "code": "SELECT l.location_id, l.street_address, l.city, l.state_province, c.country_name\nFROM locations l\nJOIN countries c ON l.country_id = c.country_id;"
+   }
+  ]
+ },
+ {
+  "title": "b) Apellido, departamento y nombre de departamento de todos los empleados (LEFT JOIN)",
+  "parts": [
+   {
+    "id": "taller_b",
+    "code": "SELECT e.last_name, e.department_id, d.department_name\nFROM employees e\nLEFT JOIN departments d ON e.department_id = d.department_id;"
+   }
+  ]
+ },
+ {
+  "title": "c) Empleados que trabajan en Toronto",
+  "parts": [
+   {
+    "id": "taller_c",
+    "code": "SELECT e.last_name, j.job_title, e.department_id, d.department_name\nFROM employees e\nJOIN departments d ON e.department_id = d.department_id\nJOIN locations l ON d.location_id = l.location_id\nJOIN jobs j ON e.job_id = j.job_id\nWHERE l.city = 'Toronto';"
+   }
+  ]
+ },
+ {
+  "title": "d) Empleados y sus gerentes (autounión)",
+  "parts": [
+   {
+    "id": "taller_d",
+    "code": "SELECT e.last_name AS \"Employee\", e.employee_id AS \"Emp#\", m.last_name AS \"Manager\", m.employee_id AS \"Mgr#\"\nFROM employees e\nJOIN employees m ON e.manager_id = m.employee_id;"
+   }
+  ]
+ },
+ {
+  "title": "e) Empleados y sus gerentes, incluido quien no tiene gerente (LEFT JOIN)",
+  "parts": [
+   {
+    "id": "taller_e",
+    "code": "SELECT e.last_name AS \"Employee\", e.employee_id AS \"Emp#\", m.last_name AS \"Manager\", m.employee_id AS \"Mgr#\"\nFROM employees e\nLEFT JOIN employees m ON e.manager_id = m.employee_id\nORDER BY e.employee_id;"
+   }
+  ]
+ },
+ {
+  "title": "f) Compañeros de departamento de cada empleado",
+  "parts": [
+   {
+    "id": "taller_f",
+    "code": "SELECT e.department_id AS \"Departamento\", e.last_name AS \"Empleado\", c.last_name AS \"Colega\"\nFROM employees e\nJOIN employees c ON e.department_id = c.department_id AND e.employee_id <> c.employee_id\nORDER BY e.department_id, e.last_name, c.last_name;"
+   }
+  ]
+ },
+ {
+  "title": "g) Estructura de JOB_GRADES y grado salarial de cada empleado",
+  "parts": [
+   {
+    "id": "taller_g_1",
+    "code": "DESCRIBE job_grades;"
+   },
+   {
+    "id": "taller_g_2",
+    "code": "SELECT e.last_name, j.job_title, d.department_name, e.salary, g.grade_level\nFROM employees e\nJOIN jobs j ON e.job_id = j.job_id\nLEFT JOIN departments d ON e.department_id = d.department_id\nJOIN job_grades g ON e.salary BETWEEN g.lowest_sal AND g.highest_sal;"
+   }
+  ]
+ },
+ {
+  "title": "h) Empleados contratados después de Davies",
+  "parts": [
+   {
+    "id": "taller_h",
+    "code": "SELECT e.first_name || ' ' || e.last_name AS nombre, e.hire_date\nFROM employees e\nJOIN employees dv ON dv.last_name = 'Davies' AND dv.hire_date < e.hire_date;"
+   }
+  ]
+ },
+ {
+  "title": "i) Empleados contratados antes que su supervisor",
+  "parts": [
+   {
+    "id": "taller_i",
+    "code": "SELECT e.first_name || ' ' || e.last_name AS \"Empleado\", e.hire_date AS \"Contratacion Empleado\",\n       m.first_name || ' ' || m.last_name AS \"Supervisor\", m.hire_date AS \"Contratacion Supervisor\"\nFROM employees e\nJOIN employees m ON e.manager_id = m.employee_id\nWHERE e.hire_date < m.hire_date;"
+   }
+  ]
+ },
+ {
+  "title": "j) Empleados del mismo departamento que un empleado dado (DEFINE apellido = Davies)",
+  "parts": [
+   {
+    "id": "taller_j",
+    "code": "DEFINE apellido = Davies\nSELECT last_name, hire_date\nFROM employees\nWHERE department_id IN (SELECT department_id FROM employees WHERE last_name = '&&apellido')\nAND last_name <> '&&apellido';\nUNDEFINE apellido"
+   }
+  ]
+ },
+ {
+  "title": "k) Empleados con salario superior al promedio",
+  "parts": [
+   {
+    "id": "taller_k",
+    "code": "SELECT employee_id, last_name\nFROM employees\nWHERE salary > (SELECT AVG(salary) FROM employees)\nORDER BY salary ASC;"
+   }
+  ]
+ },
+ {
+  "title": "l) Empleados en departamentos con algún empleado cuyo apellido contiene la letra u",
+  "parts": [
+   {
+    "id": "taller_l",
+    "code": "SELECT employee_id, last_name\nFROM employees\nWHERE department_id IN (SELECT department_id FROM employees WHERE LOWER(last_name) LIKE '%u%');"
+   }
+  ]
+ },
+ {
+  "title": "m) Empleados de departamentos ubicados en location_id 1700",
+  "parts": [
+   {
+    "id": "taller_m",
+    "code": "SELECT last_name, department_id, job_id\nFROM employees\nWHERE department_id IN (SELECT department_id FROM departments WHERE location_id = 1700);"
+   }
+  ]
+ },
+ {
+  "title": "n) Empleados cuyo gerente es King",
+  "parts": [
+   {
+    "id": "taller_n",
+    "code": "SELECT last_name, salary\nFROM employees\nWHERE manager_id IN (SELECT employee_id FROM employees WHERE last_name = 'King');"
+   }
+  ]
+ },
+ {
+  "title": "o) Empleados del departamento Executive",
+  "parts": [
+   {
+    "id": "taller_o",
+    "code": "SELECT e.department_id, e.last_name, e.job_id\nFROM employees e\nJOIN departments d ON e.department_id = d.department_id\nWHERE d.department_name = 'Executive';"
+   }
+  ]
+ }
+]

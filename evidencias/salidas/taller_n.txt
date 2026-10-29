@@ -1,0 +1,22 @@
+SQL> SELECT last_name, salary
+  2  FROM employees
+  3  WHERE manager_id IN (SELECT employee_id FROM employees WHERE last_name = 'King');
+
+LAST_NAME	 SALARY
+------------ ----------
+Kochhar 	  17000
+De Haan 	  17000
+Raphaely	  11000
+Weiss		   8000
+Fripp		   8200
+Kaufling	   7900
+Vollman 	   6500
+Mourgos 	   5800
+Russell 	  14000
+Partners	  13500
+Errazuriz	  12000
+Cambrault	  11000
+Zlotkey 	  10500
+Hartstein	  13000
+
+14 rows selected.

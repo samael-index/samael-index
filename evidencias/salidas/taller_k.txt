@@ -1,0 +1,60 @@
+SQL> SELECT employee_id, last_name
+  2  FROM employees
+  3  WHERE salary > (SELECT AVG(salary) FROM employees)
+  4  ORDER BY salary ASC;
+
+EMPLOYEE_ID LAST_NAME
+----------- ------------
+	203 Mavris
+	123 Vollman
+	165 Lee
+	113 Popp
+	155 Tuvault
+	161 Sewall
+	178 Grant
+	164 Marvins
+	172 Bates
+	171 Smith
+	154 Cambrault
+	160 Doran
+	111 Sciarra
+	112 Urman
+	122 Kaufling
+	120 Weiss
+	159 Smith
+	153 Olsen
+	121 Fripp
+	110 Chen
+	206 Gietz
+	177 Livingston
+	176 Taylor
+	175 Hutton
+	158 McEwen
+	152 Hall
+	109 Faviet
+	103 Hunold
+	157 Sully
+	151 Bernstein
+	163 Greene
+	170 Fox
+	156 King
+	150 Tucker
+	204 Baer
+	169 Bloom
+	149 Zlotkey
+	162 Vishney
+	174 Abel
+	148 Cambrault
+	114 Raphaely
+	168 Ozer
+	147 Errazuriz
+	108 Greenberg
+	205 Higgins
+	201 Hartstein
+	146 Partners
+	145 Russell
+	102 De Haan
+	101 Kochhar
+	100 King
+
+51 rows selected.

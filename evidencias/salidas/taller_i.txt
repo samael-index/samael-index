@@ -1,0 +1,47 @@
+SQL> SELECT e.first_name || ' ' || e.last_name AS "Empleado", e.hire_date AS "Contratacion Empleado",
+  2  	    m.first_name || ' ' || m.last_name AS "Supervisor", m.hire_date AS "Contratacion Supervisor"
+  3  FROM employees e
+  4  JOIN employees m ON e.manager_id = m.employee_id
+  5  WHERE e.hire_date < m.hire_date;
+
+Empleado		 Contratacion Empleado	Supervisor		 Contratacion Supervisor
+------------------------ ---------------------- ------------------------ ------------------------
+Lex De Haan		 13-JAN-01		Steven King		 17-JUN-03
+Den Raphaely		 07-DEC-02		Steven King		 17-JUN-03
+Payam Kaufling		 01-MAY-03		Steven King		 17-JUN-03
+Nancy Greenberg 	 17-AUG-02		Neena Kochhar		 21-SEP-05
+Jennifer Whalen 	 17-SEP-03		Neena Kochhar		 21-SEP-05
+Susan Mavris		 07-JUN-02		Neena Kochhar		 21-SEP-05
+Hermann Baer		 07-JUN-02		Neena Kochhar		 21-SEP-05
+Shelley Higgins 	 07-JUN-02		Neena Kochhar		 21-SEP-05
+David Austin		 25-JUN-05		Alexander Hunold	 03-JAN-06
+Daniel Faviet		 16-AUG-02		Nancy Greenberg 	 17-AUG-02
+James Marlow		 16-FEB-05		Adam Fripp		 10-APR-05
+Nandita Sarchand	 27-JAN-04		Adam Fripp		 10-APR-05
+Alexis Bull		 20-FEB-05		Adam Fripp		 10-APR-05
+Renske Ladwig		 14-JUL-03		Shanta Vollman		 10-OCT-05
+Sarah Bell		 04-FEB-04		Shanta Vollman		 10-OCT-05
+Britney Everett 	 03-MAR-05		Shanta Vollman		 10-OCT-05
+Trenna Rajs		 17-OCT-03		Kevin Mourgos		 16-NOV-07
+Curtis Davies		 29-JAN-05		Kevin Mourgos		 16-NOV-07
+Randall Matos		 15-MAR-06		Kevin Mourgos		 16-NOV-07
+Peter Vargas		 09-JUL-06		Kevin Mourgos		 16-NOV-07
+Alana Walsh		 24-APR-06		Kevin Mourgos		 16-NOV-07
+Kevin Feeney		 23-MAY-06		Kevin Mourgos		 16-NOV-07
+Donald OConnell 	 21-JUN-07		Kevin Mourgos		 16-NOV-07
+Janette King		 30-JAN-04		Karen Partners		 05-JAN-05
+Patrick Sully		 04-MAR-04		Karen Partners		 05-JAN-05
+Allan McEwen		 01-AUG-04		Karen Partners		 05-JAN-05
+Lisa Ozer		 11-MAR-05		Gerald Cambrault	 15-OCT-07
+Harrison Bloom		 23-MAR-06		Gerald Cambrault	 15-OCT-07
+Tayler Fox		 24-JAN-06		Gerald Cambrault	 15-OCT-07
+William Smith		 23-FEB-07		Gerald Cambrault	 15-OCT-07
+Elizabeth Bates 	 24-MAR-07		Gerald Cambrault	 15-OCT-07
+Ellen Abel		 11-MAY-04		Eleni Zlotkey		 29-JAN-08
+Alyssa Hutton		 19-MAR-05		Eleni Zlotkey		 29-JAN-08
+Jonathon Taylor 	 24-MAR-06		Eleni Zlotkey		 29-JAN-08
+Jack Livingston 	 23-APR-06		Eleni Zlotkey		 29-JAN-08
+Kimberely Grant 	 24-MAY-07		Eleni Zlotkey		 29-JAN-08
+Charles Johnson 	 04-JAN-08		Eleni Zlotkey		 29-JAN-08
+
+37 rows selected.
